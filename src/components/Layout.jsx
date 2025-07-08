@@ -1,13 +1,14 @@
+// Layout.jsx
 import React, { useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 
-// Create 80 stars with random positions and scroll speed
-const stars = Array.from({ length: 80 }, (_, i) => ({
+// Generate stars with random position and speed
+const stars = Array.from({ length: 100 }, (_, i) => ({
   id: i,
-  size: Math.random() * 3 + 1,
+  size: Math.random() * 2 + 1,
   top: Math.random() * 100,
   left: Math.random() * 100,
-  speed: Math.random() * 0.5 + 0.3,
+  speed: Math.random() * 0.5 + 0.2,
 }));
 
 const StarBackground = () => {
@@ -16,8 +17,9 @@ const StarBackground = () => {
   useEffect(() => {
     const onScroll = () => {
       const scrollY = window.scrollY;
-      controls.start({ y: scrollY * 0.2 });
+      controls.start({ y: scrollY * 0.3 });
     };
+
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, [controls]);
