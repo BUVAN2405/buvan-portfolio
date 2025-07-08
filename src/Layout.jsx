@@ -25,7 +25,8 @@ const StarBackground = () => {
   return (
     <motion.div
       animate={controls}
-      className="fixed top-0 left-0 w-full h-full -z-10 overflow-hidden bg-black">
+      className="fixed top-0 left-0 w-full h-full -z-10 overflow-hidden bg-black"
+    >
       {stars.map((star) => (
         <div
           key={star.id}
